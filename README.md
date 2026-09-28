@@ -39,8 +39,12 @@ Wazuh（SIEM，单节点）+ Linux 靶机 + Web 靶机（DVWA）+ Kali（攻击�
   - [x] 创建 p3-dvwa：192.168.30.20，Host-only #4 + NAT
   - [x] 部署 Apache、PHP、MariaDB 和 DVWA
   - [x] 安装 Wazuh Agent 4.14，Manager 端显示 Agent 001 Active
-  - [ ] 创建 p3-dvwa-dvwa-installed 和 p3-dvwa-agent-installed 快照
-  - [ ] 验证 Dashboard Endpoints 和日志采集
+  - [x] 创建 p3-dvwa-base 快照
+  - [x] 创建 p3-dvwa-dvwa-installed 快照
+  - [x] 创建 p3-dvwa-agent-installed 快照
+  - [x] 验证 Dashboard Endpoints 和日志采集
+  - [ ] 冻结/暂停 Wazuh 包自动升级并整理部署记录
+  - [ ] 创建 p3-kali 攻击机
 - [ ] 第 2-3 周：检测规则调优 + 4 类事件模拟
 - [ ] 第 4-5 周：分析师工作流（告警→研判→IOC→隔离→复盘）+ 值守记录
 - [ ] 第 6 周：态势感知仪表盘 + 收尾
@@ -52,6 +56,7 @@ Wazuh（SIEM，单节点）+ Linux 靶机 + Web 靶机（DVWA）+ Kali（攻击�
 ## 简历描述（STAR，项目完成后补）
 
 ## 面试高频题（项目完成后补）
+
 
 
 
