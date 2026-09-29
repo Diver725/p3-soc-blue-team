@@ -44,7 +44,8 @@ Wazuh（SIEM，单节点）+ Linux 靶机 + Web 靶机（DVWA）+ Kali（攻击�
   - [x] 创建 p3-dvwa-agent-installed 快照
   - [x] 验证 Dashboard Endpoints 和日志采集
   - [ ] 冻结/暂停 Wazuh 包自动升级并整理部署记录
-  - [ ] 创建 p3-kali 攻击机
+  - [x] 创建 p3-kali 攻击机（D 盘，2GB/2 vCPU，Host-only #4 + NAT）
+  - [x] 配置 p3-kali 静态 IP 为 192.168.30.30/24，并创建 p3-kali-base 快照
 - [ ] 第 2-3 周：检测规则调优 + 4 类事件模拟
 - [ ] 第 4-5 周：分析师工作流（告警→研判→IOC→隔离→复盘）+ 值守记录
 - [ ] 第 6 周：态势感知仪表盘 + 收尾
@@ -56,6 +57,7 @@ Wazuh（SIEM，单节点）+ Linux 靶机 + Web 靶机（DVWA）+ Kali（攻击�
 ## 简历描述（STAR，项目完成后补）
 
 ## 面试高频题（项目完成后补）
+
 
 
 
