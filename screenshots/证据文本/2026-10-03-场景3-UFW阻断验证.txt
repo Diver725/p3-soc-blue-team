@@ -1,0 +1,25 @@
+场景3 UFW 阻断与恢复验证
+
+1. p3-dvwa 添加阻断规则：
+sudo ufw insert 1 deny from 192.168.30.30 to any port 80 proto tcp
+
+2. UFW 规则顺序：
+[ 1] 80/tcp DENY IN 192.168.30.30
+[ 2] 22/tcp ALLOW IN 192.168.10.0/24
+[ 3] 22/tcp ALLOW IN 192.168.30.0/24
+[ 4] 80/tcp ALLOW IN 192.168.30.0/24
+
+3. p3-kali 阻断验证：
+curl -I --max-time 3 http://192.168.30.20 || echo http-blocked
+输出：
+curl: (28) Connection timed out after 3001 milliseconds
+http-blocked
+
+4. p3-dvwa 删除临时规则：
+sudo ufw delete deny from 192.168.30.30 to any port 80 proto tcp
+Rule deleted
+
+5. p3-kali 恢复验证：
+curl -I --max-time 3 http://192.168.30.20
+HTTP/1.1 302 Found
+Location: login.php

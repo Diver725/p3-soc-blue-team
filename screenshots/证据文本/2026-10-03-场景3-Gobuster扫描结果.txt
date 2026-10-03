@@ -1,0 +1,12 @@
+Gobuster 3.8.2 目录扫描结果
+
+命令：
+gobuster dir -u http://192.168.30.20 -w /tmp/p3-dirscan.txt -t 5 -q
+
+输出：
+config               (Status: 301) [Size: 315] [--> http://192.168.30.20/config/]
+robots.txt           (Status: 200) [Size: 25]
+login.php            (Status: 200) [Size: 1342]
+.git                 (Status: 301) [Size: 313] [--> http://192.168.30.20/.git/]
+server-status        (Status: 403) [Size: 278]
+setup.php            (Status: 200) [Size: 4705]
