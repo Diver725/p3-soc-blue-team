@@ -1,0 +1,24 @@
+2026-10-04 场景4：隔离与哈希验证
+
+隔离目录：
+/root/p3-quarantine
+
+隔离后哈希：
+3089842268be1cac228e42e23c3de6e5e2d286826e51ef1c93dd92ff3895779c  /root/p3-quarantine/p3-fim-test.php
+e44c3cd662221b0b07148c7d8c39294a9ae94ea3202c386c6d851e68e852a490  /root/p3-quarantine/p3-fim-test-100300.php
+37c24f49d1fc40b38f87c555f5070a27592faca9176679f53047ffe30db66f10  /root/p3-quarantine/p3-fim-modify-test.php
+
+隔离文件列表：
+-rw------- 1 www-data www-data  82 Oct  4 10:11 p3-fim-modify-test.php
+-rw------- 1 www-data www-data  67 Oct  4 10:02 p3-fim-test-100300.php
+-rw------- 1 www-data www-data 125 Oct  4 09:47 p3-fim-test.php
+
+Web uploads 目录：
+total 12
+drwxr-xr-x 2 www-data www-data 4096 Oct  4 10:13 .
+drwxr-xr-x 5 www-data www-data 4096 Sep 27 12:05 ..
+-rw-r--r-- 1 www-data www-data  667 Sep 27 12:05 dvwa_email.png
+
+HTTP 访问验证：
+curl -I --max-time 3 http://192.168.30.20/hackable/uploads/p3-fim-test-100300.php
+HTTP/1.1 404 Not Found

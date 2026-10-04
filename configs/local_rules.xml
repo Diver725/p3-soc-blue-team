@@ -22,3 +22,15 @@
     <group>attack,web_scanning,</group>
   </rule>
 </group>
+
+<group name="syscheck,web_upload,">
+  <rule id="100300" level="10">
+    <if_sid>554</if_sid>
+    <field name="file">/var/www/html/hackable/uploads/</field>
+    <description>Custom suspicious web file added to DVWA upload directory.</description>
+    <mitre>
+      <id>T1505.003</id>
+    </mitre>
+    <group>attack,web_shell,</group>
+  </rule>
+</group>

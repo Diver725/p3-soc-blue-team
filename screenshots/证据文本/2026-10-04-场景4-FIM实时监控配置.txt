@@ -1,0 +1,11 @@
+2026-10-04 场景4：FIM 实时监控配置
+
+配置文件：
+/var/ossec/etc/ossec.conf
+
+新增配置：
+<directories realtime="yes" report_changes="yes" check_all="yes">/var/www/html/hackable/uploads</directories>
+
+Syscheck 日志：
+2026/10/04 09:45:12 wazuh-syscheckd: INFO: (6003): Monitoring path: '/var/www/html/hackable/uploads', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | report_changes | realtime'.
+2026/10/04 09:45:12 wazuh-syscheckd: INFO: (6016): Directory set for real time monitoring: '/var/www/html/hackable/uploads'.

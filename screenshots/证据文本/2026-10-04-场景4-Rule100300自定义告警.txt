@@ -1,0 +1,20 @@
+2026-10-04 场景4：Rule 100300 自定义 Web 文件新增告警
+
+规则：
+<group name="syscheck,web_upload,">
+  <rule id="100300" level="10">
+    <if_sid>554</if_sid>
+    <field name="file">/var/www/html/hackable/uploads/</field>
+    <description>Custom suspicious web file added to DVWA upload directory.</description>
+    <mitre>
+      <id>T1505.003</id>
+    </mitre>
+    <group>attack,web_shell,</group>
+  </rule>
+</group>
+
+命中告警：
+{"timestamp":"2026-10-04T10:02:46.909+0000","rule":{"level":10,"description":"Custom suspicious web file added to DVWA upload directory.","id":"100300","mitre":{"id":["T1505.003"],"tactic":["Persistence"],"technique":["Web Shell"]},"firedtimes":1,"mail":false,"groups":["syscheck","web_upload","attack","web_shell"]},"agent":{"id":"001","name":"p3-dvwa","ip":"192.168.30.20"},"manager":{"name":"p3-wazuh"},"id":"1791108166.66823","full_log":"File '/var/www/html/hackable/uploads/p3-fim-test-100300.php' added\nMode: realtime\n","syscheck":{"path":"/var/www/html/hackable/uploads/p3-fim-test-100300.php","mode":"realtime","size_after":"67","perm_after":"rw-rw----","uid_after":"33","gid_after":"33","md5_after":"081adf5ebb9fb506f6572ff615862635","sha1_after":"c6729d396be9343ae016c6d8b0378aa386a44ddd","sha256_after":"e44c3cd662221b0b07148c7d8c39294a9ae94ea3202c386c6d851e68e852a490","uname_after":"www-data","gname_after":"www-data","mtime_after":"2026-10-04T10:02:46","inode_after":9663,"event":"added"},"decoder":{"name":"syscheck_new_entry"},"location":"syscheck"}
+
+第二次命中：
+{"timestamp":"2026-10-04T10:11:14.349+0000","rule":{"level":10,"description":"Custom suspicious web file added to DVWA upload directory.","id":"100300","mitre":{"id":["T1505.003"],"tactic":["Persistence"],"technique":["Web Shell"]},"firedtimes":2,"mail":false,"groups":["syscheck","web_upload","attack","web_shell"]},"agent":{"id":"001","name":"p3-dvwa","ip":"192.168.30.20"},"manager":{"name":"p3-wazuh"},"id":"1791108674.88609","full_log":"File '/var/www/html/hackable/uploads/p3-fim-modify-test.php' added\nMode: realtime\n","syscheck":{"path":"/var/www/html/hackable/uploads/p3-fim-modify-test.php","mode":"realtime","size_after":"55","perm_after":"rw-rw----","uid_after":"33","gid_after":"33","md5_after":"7342e317d86eb1459e96c2e81eccea48","sha1_after":"eb24246bd9450013c6ba7fd427f9f67bcda48273","sha256_after":"55dbfefa3e34a140b08a01c9c6387e94f5658e39dbc5b213d3065d9ed684f0b0","uname_after":"www-data","gname_after":"www-data","mtime_after":"2026-10-04T10:11:14","inode_after":777,"event":"added"},"decoder":{"name":"syscheck_new_entry"},"location":"syscheck"}
